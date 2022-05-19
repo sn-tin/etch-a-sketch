@@ -140,8 +140,8 @@ function createGrid(boxes) {
 
 
 function rowColumnSize(size) {
-  mainGrid.style.gridTemplateRows = "(repeat(".concat(size, "), 1fr)");
-  mainGrid.style.gridTemplateColumns = "(repeat(".concat(size, "), 1fr)");
+  mainGrid.style.setProperty("gridTemplateRows", "(repeat(".concat(size, "), 1fr)"));
+  mainGrid.style.setProperty("gridTemplateColumns", "(repeat(".concat(size, "), 1fr)"));
 }
 /* Input size of grid from user */
 
@@ -161,7 +161,6 @@ function sketch() {
   createGrid(16);
   var setButton = document.querySelector(".set-btn");
   setButton.addEventListener('click', changeSize);
-  fillColor();
 }
 
 sketch();
@@ -193,7 +192,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40523" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43187" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -19,8 +19,8 @@ function createGrid(boxes){
 
 /* Size for grid rows and columns */
 function rowColumnSize(size){
-    mainGrid.style.gridTemplateRows = `(repeat(${size}), 1fr)`;
-    mainGrid.style.gridTemplateColumns = `(repeat(${size}), 1fr)`;
+    mainGrid.style.setProperty("gridTemplateRows", `(repeat(${size}), 1fr)`);
+    mainGrid.style.setProperty("gridTemplateColumns", `(repeat(${size}), 1fr)`);
 }
 
 /* Input size of grid from user */
@@ -38,7 +38,6 @@ function sketch(){
     createGrid(16);
     let setButton = document.querySelector(".set-btn");
     setButton.addEventListener('click', changeSize);
-    fillColor();
 }
 
 sketch();
