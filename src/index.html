@@ -8,8 +8,30 @@
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="./scss/main.scss">
     <title>Etch-a-sketch</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    
+    <main class="container"> 
+        <h1 class="head-title">Etch-a-sketch</h1>
+        <!-- Etch-a-sketch -->
+        <div class="etch-a-sketch">
+            <div class="controls">
+                <form>
+                    <input class="grid-size" type="text" placeholder="Grid's Size">
+                    <button class="set-btn" type="submit">Set</button>
+                </form>
+                <button>Pen default Color</button>
+                <button>Rainbow Pen Color</button>
+            </div>
+            <div class="main-grid">
+            </div>
+        </div>
+          <!-- End of etch-a-sketch -->
+    </main>
+
+    <script src="./index.js"></script>
 </body>
 </html>

@@ -1,5 +1,53 @@
-body {
-  background-color: red;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  font-family: "Poppins";
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.head-title {
+  font-size: clamp(2.1rem, 2.5vw, 2.3rem);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.etch-a-sketch {
+  text-align: center;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+input[type=text] {
+  width: 44%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+}
+
+.grid-element {
+  border: 1px solid rgb(180, 180, 180);
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
