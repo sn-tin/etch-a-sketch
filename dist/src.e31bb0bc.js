@@ -120,50 +120,31 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"index.js":[function(require,module,exports) {
 /* Creating Grid */
 var mainGrid = document.querySelector(".main-grid");
-var gridElement = document.querySelectorAll(".grid-element");
 
-function createGrid(boxes) {
-  for (var rows = 0; rows < boxes; rows++) {
-    for (var columns = 0; columns < boxes; columns++) {
-      var createDIVs = document.createElement("div");
-      createDIVs.classList.add("grid-element");
-      mainGrid.insertAdjacentElement("beforeend", createDIVs);
-      gridElement.forEach(function (grid) {
-        grid.addEventListener("mouseover", function (e) {
-          e.target.backgroundColor = "black";
-        });
-      });
-    }
+function createGrid(rowsCol) {
+  for (var i = 0; i < rowsCol * rowsCol; i++) {
+    var createDIVs = document.createElement("div");
+    createDIVs.classList.add("grid-element");
+    mainGrid.insertAdjacentElement("beforeend", createDIVs);
+    mainGrid.style.gridTemplateRows = "(repeat(".concat(rowsCol, "), 1fr)");
+    mainGrid.style.gridTemplateColumns = "(repeat(".concat(rowsCol, "), 1fr)");
   }
 }
-/* Size for grid rows and columns */
 
-
-function rowColumnSize(size) {
-  mainGrid.style.setProperty("gridTemplateRows", "(repeat(".concat(size, "), 1fr)"));
-  mainGrid.style.setProperty("gridTemplateColumns", "(repeat(".concat(size, "), 1fr)"));
-}
+createGrid(16);
 /* Input size of grid from user */
 
+var inputGridSize = document.querySelector(".input-grid-size").value;
+var setButton = document.querySelector(".set-btn");
 
-var inputGridSize = document.querySelector(".grid-size");
-
-function changeSize() {
-  var setValue = inputGridSize.value;
-  rowColumnSize(setValue);
-  gridElement.remove();
-  createGrid(setValue);
+function resetGridSize() {
+  setButton.addEventListener("click", function () {
+    rowColumnSize(inputGridSize);
+    var gridElement = document.querySelectorAll(".grid-element");
+    gridElement.remove();
+    createGrid(inputGridSize);
+  });
 }
-/* Main sketching */
-
-
-function sketch() {
-  createGrid(16);
-  var setButton = document.querySelector(".set-btn");
-  setButton.addEventListener('click', changeSize);
-}
-
-sketch();
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -192,7 +173,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43187" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42955" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
