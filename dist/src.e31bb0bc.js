@@ -120,28 +120,35 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"index.js":[function(require,module,exports) {
 /* Creating Grid */
 var mainGrid = document.querySelector(".main-grid");
+var gridCells = document.querySelectorAll(".grid-element");
 
 function createGrid(rowsCol) {
   for (var i = 0; i < rowsCol * rowsCol; i++) {
     var createDIVs = document.createElement("div");
     createDIVs.classList.add("grid-element");
+    createDIVs.classList.add("cell-color");
     mainGrid.insertAdjacentElement("beforeend", createDIVs);
-    mainGrid.style.gridTemplateColumns = "repeat(".concat(rowsCol, ", 1fr)");
-    mainGrid.style.gridTemplateRows = "repeat(".concat(rowsCol, ", 1fr)");
+    mainGrid.style.gridTemplateColumns = "repeat(".concat(rowsCol, " , 1fr)");
+    mainGrid.style.gridTemplateRows = "repeat(".concat(rowsCol, " , 1fr)");
   }
 }
 /* Reset size of grid with user's input */
 
 
-var inputGridSize = document.querySelector(".input-grid-size").value;
+var inputGridSize = document.querySelector(".input-grid-size");
 var setButton = document.querySelector(".set-btn");
 
 function resetGridSize() {
   setButton.addEventListener("click", function () {
-    var grid = document.querySelectorAll(".grid-element");
-    grid.remove();
-    createGrid(inputGridSize);
-    console.log(inputGridSize);
+    var size = inputGridSize.value;
+    console.log(size);
+
+    if (size < 2 || size > 80) {
+      alert("Invalid Number. Please try again!");
+    } else {
+      gridCells.remove();
+      createGrid(size);
+    }
   });
 }
 /* Main Sketching */
@@ -149,6 +156,11 @@ function resetGridSize() {
 
 function sketch() {
   createGrid(16);
+  gridCells.forEach(function (cells) {
+    cells.addEventListener("mouseover", function (e) {
+      e.target.classList.replace("cell-color", "mouseover-color");
+    });
+  });
   resetGridSize();
 }
 
@@ -181,7 +193,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36725" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42671" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
