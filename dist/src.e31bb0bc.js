@@ -120,51 +120,29 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"index.js":[function(require,module,exports) {
 /* Creating Grid */
 var mainGrid = document.querySelector(".main-grid");
-var gridCells = document.querySelectorAll(".grid-element");
+var gridCells = mainGrid.querySelector("div");
+var setGridSize = document.querySelector(".input-grid-size");
 
 function createGrid(rowsCol) {
   for (var i = 0; i < rowsCol * rowsCol; i++) {
     var createDIVs = document.createElement("div");
     createDIVs.classList.add("grid-element");
-    createDIVs.classList.add("cell-color");
     mainGrid.insertAdjacentElement("beforeend", createDIVs);
-    mainGrid.style.gridTemplateColumns = "repeat(".concat(rowsCol, " , 1fr)");
-    mainGrid.style.gridTemplateRows = "repeat(".concat(rowsCol, " , 1fr)");
+    mainGrid.style.gridTemplateColumns = "repeat(".concat(rowsCol, ", 1fr)");
+    mainGrid.style.gridTemplateRows = "repeat(".concat(rowsCol, ", 1fr)");
   }
 }
+
+createGrid(16);
 /* Reset size of grid with user's input */
 
-
-var inputGridSize = document.querySelector(".input-grid-size");
-var setButton = document.querySelector(".set-btn");
-
-function resetGridSize() {
-  setButton.addEventListener("click", function () {
-    var size = inputGridSize.value;
-    console.log(size);
-
-    if (size < 2 || size > 80) {
-      alert("Invalid Number. Please try again!");
-    } else {
-      gridCells.remove();
-      createGrid(size);
-    }
-  });
+function resetGridSize(input) {
+  if (input >= 2 && input <= 100) {
+    createGrid(input);
+  } else {
+    alert("Number shouldn't be lower than 2 and greater than 100. Please try again.");
+  }
 }
-/* Main Sketching */
-
-
-function sketch() {
-  createGrid(16);
-  gridCells.forEach(function (cells) {
-    cells.addEventListener("mouseover", function (e) {
-      e.target.classList.replace("cell-color", "mouseover-color");
-    });
-  });
-  resetGridSize();
-}
-
-sketch();
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -193,7 +171,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42671" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43269" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

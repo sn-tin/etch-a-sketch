@@ -1,48 +1,25 @@
 /* Creating Grid */
-const mainGrid = document.querySelector(".main-grid");
-let gridCells = document.querySelectorAll(".grid-element");
-
+let mainGrid = document.querySelector(".main-grid");
+let gridCells = mainGrid.querySelector("div");
+let setGridSize = document.querySelector(".input-grid-size");
 
 function createGrid(rowsCol){
     for(let i = 0; i < rowsCol * rowsCol; i++){
             let createDIVs = document.createElement("div");
             createDIVs.classList.add("grid-element");
-            createDIVs.classList.add("cell-color");
             mainGrid.insertAdjacentElement("beforeend", createDIVs);
-            mainGrid.style.gridTemplateColumns = `repeat(${rowsCol} , 1fr)`;
-            mainGrid.style.gridTemplateRows = `repeat(${rowsCol} , 1fr)`;
+            mainGrid.style.gridTemplateColumns = `repeat(${rowsCol}, 1fr)`;
+            mainGrid.style.gridTemplateRows = `repeat(${rowsCol}, 1fr)`;
     }
 }
 
+createGrid(16);
+
 /* Reset size of grid with user's input */
-const inputGridSize = document.querySelector(".input-grid-size");
-const setButton = document.querySelector(".set-btn");
-
-function resetGridSize() {
-    setButton.addEventListener("click", function() {
-        let size = inputGridSize.value;
-        
-        console.log(size)
-
-        if(size < 2 || size > 80){
-            alert("Invalid Number. Please try again!")
-        } else {
-            gridCells.remove();
-            createGrid(size);
-        }
-    })
+function resetGridSize(input){
+    if(input >= 2 && input <= 100){
+        createGrid(input)
+    } else {
+        alert("Number shouldn't be lower than 2 and greater than 100. Please try again.")
+    }
 }
-
-
-/* Main Sketching */
-function sketch(){
-    createGrid(16);
-    gridCells.forEach(cells => {
-        cells.addEventListener("mouseover", (e) => {
-            e.target.classList.replace("cell-color", "mouseover-color")
-        })
-    })
-    resetGridSize();
-}
-
-sketch();
