@@ -133,7 +133,7 @@ function createGrid(rowsCol) {
 }
 
 createGrid(16);
-/* Color Fill */
+/* Fill grid cells with color */
 
 var black = document.querySelector(".black-btn");
 var rainbow = document.querySelector(".rainbow-btn");
@@ -208,7 +208,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38563" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38859" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

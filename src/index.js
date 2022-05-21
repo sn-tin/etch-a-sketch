@@ -14,7 +14,7 @@ function createGrid(rowsCol){
 
 createGrid(16);
 
-/* Color Fill */
+/* Fill grid cells with color */
 
 let black = document.querySelector(".black-btn");
 let rainbow = document.querySelector(".rainbow-btn");
