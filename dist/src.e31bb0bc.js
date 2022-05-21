@@ -129,30 +129,84 @@ function createGrid(rowsCol) {
     mainGrid.insertAdjacentElement("beforeend", createDIVs);
     mainGrid.style.gridTemplateColumns = "repeat(".concat(rowsCol, ", 1fr)");
     mainGrid.style.gridTemplateRows = "repeat(".concat(rowsCol, ", 1fr)");
-    var gridCells = document.querySelectorAll(".grid-element");
+    var gridCells = document.querySelectorAll(".grid-element"); // gridCells.forEach(cells => {
+    //     cells.addEventListener("mouseover", (e) => {
+    //         let grid = e.target;
+    //         grid.style.backgroundColor = "black";
+    //     })
+    // })
+
     gridCells.forEach(function (cells) {
-      cells.addEventListener("mouseover", function (e) {
-        var grid = e.target;
-        grid.style.backgroundColor = "black";
-      });
+      cells.addEventListener("mouseover", colorFill);
     });
   }
 }
 
 createGrid(16);
+/* Color Fill */
+// function colorFill(){
+//     let black = document.querySelector(".black-btn");
+//     let rainbow = document.querySelector(".rainbow-btn");
+//     let erase = document.querySelector(".eraser-btn");
+//     let colorButton = [black, rainbow, erase];
+//     colorButton.forEach(color => {
+//         color.addEventListener("click", () => {
+//             switch(color.className){
+//                 case "black-btn":
+//                     this.style.backgroundColor = "black";
+//                 break;
+//                 case "rainbow-btn":
+//                     this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+//                 break;
+//                 case "eraser-btn":
+//                     this.style.backgroundColor = "white";
+//                 break;
+//                 default:
+//                     this.style.backgroundColor = "black";
+//                 break;
+//             }
+//         })
+//     })
+// }
+
+function colorFill() {
+  var colorButton = document.getElementsByTagName("button");
+
+  for (var i = 0; i < colorButton.length; i++) {
+    switch (true) {
+      case i === 0:
+        this.style.backgroundColor = "black";
+        break;
+
+      case i === 1:
+        this.style.backgroundColor = "hsl(".concat(Math.random() * 360, ", 100%, 50%)");
+        break;
+
+      case i === 2:
+        this.style.backgroundColor = "white";
+        break;
+
+      default:
+        this.style.backgroundColor = "black";
+        break;
+    }
+  }
+}
 /* Reset size of grid with user's input */
-// let setBtn = document.querySelector(".set-btn");
-// let gridSize = document.querySelector(".input-grid-size");
-// gridSize.addEventListener("change", function resetGridSize(){
-//     console.log(gridSize);
-//     let input = gridSize.value;
-//     if(input >= 2 && input <= 80){
-//         createGrid(input)
-//     } else {
-//         alert("Number shouldn't be lower than 2 and greater than 100. Please try again.")
-//         input = 16;
-//     }
-// })
+
+
+var gridSize = document.querySelector(".input-grid-size");
+gridSize.addEventListener("change", function resetGridSize() {
+  var input = gridSize.value;
+
+  if (input >= 2 && input <= 80) {
+    mainGrid.innerHTML = '';
+    createGrid(input);
+  } else {
+    alert("Number shouldn't be lower than 2 and greater than 100. Please try again.");
+    input = 16;
+  }
+});
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -181,7 +235,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33191" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42737" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
