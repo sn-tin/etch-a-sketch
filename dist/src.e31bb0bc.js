@@ -129,77 +129,50 @@ function createGrid(rowsCol) {
     mainGrid.insertAdjacentElement("beforeend", createDIVs);
     mainGrid.style.gridTemplateColumns = "repeat(".concat(rowsCol, ", 1fr)");
     mainGrid.style.gridTemplateRows = "repeat(".concat(rowsCol, ", 1fr)");
-    var gridCells = document.querySelectorAll(".grid-element"); // gridCells.forEach(cells => {
-    //     cells.addEventListener("mouseover", (e) => {
-    //         let grid = e.target;
-    //         grid.style.backgroundColor = "black";
-    //     })
-    // })
-
-    gridCells.forEach(function (cells) {
-      cells.addEventListener("mouseover", colorFill);
-    });
   }
 }
 
 createGrid(16);
 /* Color Fill */
-// function colorFill(){
-//     let black = document.querySelector(".black-btn");
-//     let rainbow = document.querySelector(".rainbow-btn");
-//     let erase = document.querySelector(".eraser-btn");
-//     let colorButton = [black, rainbow, erase];
-//     colorButton.forEach(color => {
-//         color.addEventListener("click", () => {
-//             switch(color.className){
-//                 case "black-btn":
-//                     this.style.backgroundColor = "black";
-//                 break;
-//                 case "rainbow-btn":
-//                     this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-//                 break;
-//                 case "eraser-btn":
-//                     this.style.backgroundColor = "white";
-//                 break;
-//                 default:
-//                     this.style.backgroundColor = "black";
-//                 break;
-//             }
-//         })
-//     })
-// }
 
-function colorFill() {
-  var colorButton = document.getElementsByTagName("button");
+var black = document.querySelector(".black-btn");
+var rainbow = document.querySelector(".rainbow-btn");
+var eraser = document.querySelector(".eraser-btn");
+var colorButton = [black, rainbow, eraser];
+var gridCells = document.querySelectorAll(".grid-element");
+colorButton.forEach(function (color) {
+  color.addEventListener('click', function (e) {
+    var targetColor = e.target;
 
-  for (var i = 0; i < colorButton.length; i++) {
-    switch (true) {
-      case i === 0:
-        this.style.backgroundColor = "black";
-        break;
-
-      case i === 1:
-        this.style.backgroundColor = "hsl(".concat(Math.random() * 360, ", 100%, 50%)");
-        break;
-
-      case i === 2:
-        this.style.backgroundColor = "white";
-        break;
-
-      default:
-        this.style.backgroundColor = "black";
-        break;
+    if (targetColor.classList.contains("black-btn")) {
+      gridCells.forEach(function (cells) {
+        cells.addEventListener("mouseover", function (e) {
+          e.target.style.backgroundColor = "black";
+        });
+      });
+    } else if (targetColor.classList.contains("rainbow-btn")) {
+      gridCells.forEach(function (cells) {
+        cells.addEventListener("mouseover", function (e) {
+          e.target.style.backgroundColor = "hsl(".concat(Math.random() * 360, ", 100%, 50%)");
+        });
+      });
+    } else if (targetColor.classList.contains("eraser-btn")) {
+      gridCells.forEach(function (cells) {
+        cells.addEventListener("mouseover", function (e) {
+          e.target.style.backgroundColor = "white";
+        });
+      });
     }
-  }
-}
+  });
+});
 /* Reset size of grid with user's input */
-
 
 var gridSize = document.querySelector(".input-grid-size");
 gridSize.addEventListener("change", function resetGridSize() {
   var input = gridSize.value;
 
   if (input >= 2 && input <= 80) {
+    console.log(input);
     mainGrid.innerHTML = '';
     createGrid(input);
   } else {
@@ -235,7 +208,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42737" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38563" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
