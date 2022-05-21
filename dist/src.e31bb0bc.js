@@ -168,7 +168,8 @@ colorButton.forEach(function (color) {
 /* Reset size of grid with user's input */
 
 var gridSize = document.querySelector(".input-grid-size");
-gridSize.addEventListener("change", function resetGridSize() {
+var setButton = document.querySelector(".set-btn");
+setButton.addEventListener("click", function resetGridSize() {
   var input = gridSize.value;
 
   if (input >= 2 && input <= 80) {
@@ -177,7 +178,6 @@ gridSize.addEventListener("change", function resetGridSize() {
     createGrid(input);
   } else {
     alert("Number shouldn't be lower than 2 and greater than 100. Please try again.");
-    input = 16;
   }
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -208,7 +208,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38859" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36043" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

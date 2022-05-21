@@ -51,8 +51,9 @@ colorButton.forEach(color => {
 /* Reset size of grid with user's input */
 
 let gridSize = document.querySelector(".input-grid-size");
+let setButton = document.querySelector(".set-btn");
 
-gridSize.addEventListener("change", function resetGridSize(){
+setButton.addEventListener("click", function resetGridSize(){
     let input = gridSize.value;
     if(input >= 2 && input <= 80){
         console.log(input);
@@ -60,6 +61,5 @@ gridSize.addEventListener("change", function resetGridSize(){
         createGrid(input);
     } else {
         alert("Number shouldn't be lower than 2 and greater than 100. Please try again.")
-        input = 16;
     }
 })
