@@ -1,6 +1,5 @@
 /* Creating Grid */
 let mainGrid = document.querySelector(".main-grid");
-let gridCells = mainGrid.querySelector("div");
 let setGridSize = document.querySelector(".input-grid-size");
 
 function createGrid(rowsCol){
@@ -15,7 +14,8 @@ function createGrid(rowsCol){
 
             gridCells.forEach(cells => {
                 cells.addEventListener("mouseover", (e) => {
-                    e.target.style.backgroundColor = "black";
+                    let grid = e.target;
+                    grid.style.backgroundColor = "black";
                 })
             })
     }
@@ -24,37 +24,17 @@ function createGrid(rowsCol){
 createGrid(16);
 
 /* Reset size of grid with user's input */
-function resetGridSize(input){
-    if(input >= 2 && input <= 100){
-        createGrid(input)
-    } else {
-        alert("Number shouldn't be lower than 2 and greater than 100. Please try again.")
-    }
-}
 
-function colorBtn(){
-    let blackBtn = document.querySelector("black-btn");
-    let rainbowBtn = document.querySelector("rainbow-btn");
-    let eraserBtn = document.querySelector("white-btn");
-    let coloredBtn = [blackBtn, rainbowBtn, eraserBtn];
+// let setBtn = document.querySelector(".set-btn");
+// let gridSize = document.querySelector(".input-grid-size");
 
-    coloredBtn.forEach(colors => {
-        colors.addEventListener("click", (e) => {
-
-        switch(e.className){
-            case "black-btn":
-                e.target.style.backgroundColor = "black";
-            break;
-            case "rainbow-btn": 
-                e.target.style.backgroundColor = "#" + ((1<<24)*Math.random() | 0).toString(16);
-            break;
-            case "white-btn":
-                e.target.style.backgroundColor = "white";
-            break;
-            default:
-                e.target.style.backgroundColor = "black";
-            break;
-        }
-        })
-    })
-}
+// gridSize.addEventListener("change", function resetGridSize(){
+//     console.log(gridSize);
+//     let input = gridSize.value;
+//     if(input >= 2 && input <= 80){
+//         createGrid(input)
+//     } else {
+//         alert("Number shouldn't be lower than 2 and greater than 100. Please try again.")
+//         input = 16;
+//     }
+// })

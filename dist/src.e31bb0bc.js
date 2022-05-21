@@ -120,7 +120,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"index.js":[function(require,module,exports) {
 /* Creating Grid */
 var mainGrid = document.querySelector(".main-grid");
-var gridCells = mainGrid.querySelector("div");
 var setGridSize = document.querySelector(".input-grid-size");
 
 function createGrid(rowsCol) {
@@ -130,12 +129,11 @@ function createGrid(rowsCol) {
     mainGrid.insertAdjacentElement("beforeend", createDIVs);
     mainGrid.style.gridTemplateColumns = "repeat(".concat(rowsCol, ", 1fr)");
     mainGrid.style.gridTemplateRows = "repeat(".concat(rowsCol, ", 1fr)");
-
-    var _gridCells = document.querySelectorAll(".grid-element");
-
-    _gridCells.forEach(function (cells) {
+    var gridCells = document.querySelectorAll(".grid-element");
+    gridCells.forEach(function (cells) {
       cells.addEventListener("mouseover", function (e) {
-        e.target.style.backgroundColor = "black";
+        var grid = e.target;
+        grid.style.backgroundColor = "black";
       });
     });
   }
@@ -143,42 +141,18 @@ function createGrid(rowsCol) {
 
 createGrid(16);
 /* Reset size of grid with user's input */
-
-function resetGridSize(input) {
-  if (input >= 2 && input <= 100) {
-    createGrid(input);
-  } else {
-    alert("Number shouldn't be lower than 2 and greater than 100. Please try again.");
-  }
-}
-
-function colorBtn() {
-  var blackBtn = document.querySelector("black-btn");
-  var rainbowBtn = document.querySelector("rainbow-btn");
-  var eraserBtn = document.querySelector("white-btn");
-  var coloredBtn = [blackBtn, rainbowBtn, eraserBtn];
-  coloredBtn.forEach(function (colors) {
-    colors.addEventListener("click", function (e) {
-      switch (e.className) {
-        case "black-btn":
-          e.target.style.backgroundColor = "black";
-          break;
-
-        case "rainbow-btn":
-          e.target.style.backgroundColor = "#" + ((1 << 24) * Math.random() | 0).toString(16);
-          break;
-
-        case "white-btn":
-          e.target.style.backgroundColor = "white";
-          break;
-
-        default:
-          e.target.style.backgroundColor = "black";
-          break;
-      }
-    });
-  });
-}
+// let setBtn = document.querySelector(".set-btn");
+// let gridSize = document.querySelector(".input-grid-size");
+// gridSize.addEventListener("change", function resetGridSize(){
+//     console.log(gridSize);
+//     let input = gridSize.value;
+//     if(input >= 2 && input <= 80){
+//         createGrid(input)
+//     } else {
+//         alert("Number shouldn't be lower than 2 and greater than 100. Please try again.")
+//         input = 16;
+//     }
+// })
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -207,7 +181,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37939" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33191" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
