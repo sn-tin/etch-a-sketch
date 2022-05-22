@@ -179,7 +179,7 @@ setButton.addEventListener("click", function resetGridSize() {
     mainGrid.innerHTML = '';
     createGrid(input);
   } else {
-    alert("Number shouldn't be lower than 2 and greater than 100. Please try again.");
+    alert("Number shouldn't be lower than 2 and greater than 80. Please try again.");
   }
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -210,7 +210,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35153" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44641" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

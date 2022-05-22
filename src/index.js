@@ -61,6 +61,6 @@ setButton.addEventListener("click", function resetGridSize(){
         mainGrid.innerHTML = '';
         createGrid(input);
     } else {
-        alert("Number shouldn't be lower than 2 and greater than 100. Please try again.")
+        alert("Number shouldn't be lower than 2 and greater than 80. Please try again.")
     }
 })
