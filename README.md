@@ -3,12 +3,12 @@ This is my solution to The Odin Projects' etch-a-sketch project. The aim of this
 
 ## This project runs a parcel sass bundler
 To install:
-### On the main folder
+#### On the main folder
 npm init -y
 npm install sass -D
-### On the index.html file
+#### On the index.html file
 npm install parcel bundler -D
-### On the package.json file
+#### On the package.json file
 {
  "main": "index.js",
   "targets": {
@@ -19,6 +19,6 @@ npm install parcel bundler -D
     "build": "parcel build src/index.html"
   }
 }
-### On the terminal
+#### On the terminal
 npm start
 
