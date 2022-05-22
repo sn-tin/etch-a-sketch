@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "target": {
+    "main": false
+  },
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html"
