@@ -37,4 +37,4 @@ npm start
 ## Instruction
 To start sketching, user must choose what pen to choose. The two given pens are "Black Pen Color" and "Rainbow Button". Choosing the black pen would let you sketch or fill each grid cells with a black color only, while the rainbow pen generates random colors and would let you sketch or fill each grid cells with random colors. The third button which is the "Eraser" would erase the colors on each grid's cell.\
 \
-Users can also adjust the grid's size by typing a number (not lesser than 2 and greater than 80) on the text field and clicking the "Set" button.
+Users can also adjust the grid's size by typing a number (not lesser than 2 and greater than 80) on the text field then clicking the "Set" button.
