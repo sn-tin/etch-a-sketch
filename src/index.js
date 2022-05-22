@@ -9,6 +9,15 @@ function createGrid(rowsCol){
             mainGrid.insertAdjacentElement("beforeend", createDIVs);
             mainGrid.style.gridTemplateColumns = `repeat(${rowsCol}, 1fr)`;
             mainGrid.style.gridTemplateRows = `repeat(${rowsCol}, 1fr)`;
+
+            let black = document.querySelector(".black-btn");
+            let rainbow = document.querySelector(".rainbow-btn");
+            let eraser = document.querySelector(".eraser-btn");
+            let colorButton = [black, rainbow, eraser];
+
+            colorButton.forEach(color => {
+                color.addEventListener('click', colorFill)
+            })
     }
 }
 
@@ -16,37 +25,29 @@ createGrid(16);
 
 /* Fill grid cells with color */
 
-let black = document.querySelector(".black-btn");
-let rainbow = document.querySelector(".rainbow-btn");
-let eraser = document.querySelector(".eraser-btn");
-let colorButton = [black, rainbow, eraser];
-
-let gridCells = document.querySelectorAll(".grid-element");
-
-colorButton.forEach(color => {
-    color.addEventListener('click', (e) => {
-        let targetColor = e.target;
-        if(targetColor.classList.contains("black-btn")){
-            gridCells.forEach(cells => {
-                cells.addEventListener("mouseover", (e) => {
-                    e.target.style.backgroundColor = "black";
-                })
+function colorFill(e){
+    let gridCells = document.querySelectorAll(".grid-element");
+    let targetColor = e.target;
+    if(targetColor.classList.contains("black-btn")){
+        gridCells.forEach(cells => {
+            cells.addEventListener("mouseover", (e) => {
+                e.target.style.backgroundColor = "black";
             })
-        } else if(targetColor.classList.contains("rainbow-btn")){
-            gridCells.forEach(cells => {
-                cells.addEventListener("mouseover", (e) => {
-                    e.target.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-                })
+        })
+    } else if(targetColor.classList.contains("rainbow-btn")){
+        gridCells.forEach(cells => {
+            cells.addEventListener("mouseover", (e) => {
+                e.target.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
             })
-        } else if(targetColor.classList.contains("eraser-btn")){
-            gridCells.forEach(cells => {
-                cells.addEventListener("mouseover", (e) => {
-                    e.target.style.backgroundColor = "white";
-                })
+        })
+    } else if(targetColor.classList.contains("eraser-btn")){
+        gridCells.forEach(cells => {
+            cells.addEventListener("mouseover", (e) => {
+                e.target.style.backgroundColor = "white";
             })
-        }
-    })
-})
+        })
+    }
+}
 
 /* Reset size of grid with user's input */
 

@@ -129,43 +129,45 @@ function createGrid(rowsCol) {
     mainGrid.insertAdjacentElement("beforeend", createDIVs);
     mainGrid.style.gridTemplateColumns = "repeat(".concat(rowsCol, ", 1fr)");
     mainGrid.style.gridTemplateRows = "repeat(".concat(rowsCol, ", 1fr)");
+    var black = document.querySelector(".black-btn");
+    var rainbow = document.querySelector(".rainbow-btn");
+    var eraser = document.querySelector(".eraser-btn");
+    var colorButton = [black, rainbow, eraser];
+    colorButton.forEach(function (color) {
+      color.addEventListener('click', colorFill);
+    });
   }
 }
 
 createGrid(16);
 /* Fill grid cells with color */
 
-var black = document.querySelector(".black-btn");
-var rainbow = document.querySelector(".rainbow-btn");
-var eraser = document.querySelector(".eraser-btn");
-var colorButton = [black, rainbow, eraser];
-var gridCells = document.querySelectorAll(".grid-element");
-colorButton.forEach(function (color) {
-  color.addEventListener('click', function (e) {
-    var targetColor = e.target;
+function colorFill(e) {
+  var gridCells = document.querySelectorAll(".grid-element");
+  var targetColor = e.target;
 
-    if (targetColor.classList.contains("black-btn")) {
-      gridCells.forEach(function (cells) {
-        cells.addEventListener("mouseover", function (e) {
-          e.target.style.backgroundColor = "black";
-        });
+  if (targetColor.classList.contains("black-btn")) {
+    gridCells.forEach(function (cells) {
+      cells.addEventListener("mouseover", function (e) {
+        e.target.style.backgroundColor = "black";
       });
-    } else if (targetColor.classList.contains("rainbow-btn")) {
-      gridCells.forEach(function (cells) {
-        cells.addEventListener("mouseover", function (e) {
-          e.target.style.backgroundColor = "hsl(".concat(Math.random() * 360, ", 100%, 50%)");
-        });
+    });
+  } else if (targetColor.classList.contains("rainbow-btn")) {
+    gridCells.forEach(function (cells) {
+      cells.addEventListener("mouseover", function (e) {
+        e.target.style.backgroundColor = "hsl(".concat(Math.random() * 360, ", 100%, 50%)");
       });
-    } else if (targetColor.classList.contains("eraser-btn")) {
-      gridCells.forEach(function (cells) {
-        cells.addEventListener("mouseover", function (e) {
-          e.target.style.backgroundColor = "white";
-        });
+    });
+  } else if (targetColor.classList.contains("eraser-btn")) {
+    gridCells.forEach(function (cells) {
+      cells.addEventListener("mouseover", function (e) {
+        e.target.style.backgroundColor = "white";
       });
-    }
-  });
-});
+    });
+  }
+}
 /* Reset size of grid with user's input */
+
 
 var gridSize = document.querySelector(".input-grid-size");
 var setButton = document.querySelector(".set-btn");
@@ -208,7 +210,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36043" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33379" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
