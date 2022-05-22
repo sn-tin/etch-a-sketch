@@ -1,5 +1,6 @@
 # Build an etch-a-sketch using HTML, SCSS and Vanilla Javascript
 This is my solution to The Odin Projects' etch-a-sketch project. The aim of this project is to utilize what I've learned from the previous lessons regarding DOM manipulation. 
+![Screenshot of Etch-a-sketch](eas-screenshot.png)
 
 ## This project runs a parcel sass bundler
 To install:
