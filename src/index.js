@@ -43,7 +43,7 @@ function colorFill(e){
     } else if(targetColor.classList.contains("eraser-btn")){
         gridCells.forEach(cells => {
             cells.addEventListener("mouseover", (e) => {
-                e.target.style.backgroundColor = "white";
+                e.target.style.backgroundColor = "hsl(0, 4%, 89%)";
             })
         })
     }

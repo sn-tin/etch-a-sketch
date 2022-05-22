@@ -161,7 +161,7 @@ function colorFill(e) {
   } else if (targetColor.classList.contains("eraser-btn")) {
     gridCells.forEach(function (cells) {
       cells.addEventListener("mouseover", function (e) {
-        e.target.style.backgroundColor = "white";
+        e.target.style.backgroundColor = "hsl(0, 4%, 89%)";
       });
     });
   }
@@ -210,7 +210,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33379" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35153" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
