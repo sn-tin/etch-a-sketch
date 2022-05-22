@@ -3,6 +3,16 @@ This is my solution to The Odin Projects' etch-a-sketch project. The aim of this
 
 ![Screenshot of Etch-a-sketch](src/eas-screenshot.png)
 
+## Tools
+- HTML5
+- CSS3
+- JavaScript
+- SCSS
+- Google Fonts
+- Vercel 
+- Git 
+- Github
+
 ## This project runs a parcel sass bundler
 To install:
 #### Go to the main folder, then run this on the terminal
@@ -20,7 +30,7 @@ npm install parcel bundler -D
     "start": "parcel src/index.html",\
     "build": "parcel build src/index.html"\
   }\
-}\
+}
 #### Finally, to start the project
 npm start
 
