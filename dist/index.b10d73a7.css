@@ -99,7 +99,6 @@ button {
 .grid-element {
   cursor: pointer;
   background-color: #e3e3e3;
-  border: 1px solid #e3e3e3;
 }
 
 @media screen and (max-width: 450px) {

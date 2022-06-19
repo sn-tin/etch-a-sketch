@@ -1,7 +1,7 @@
 14309
-66/home/kristine/Documents/Web Dev/repos/odin-eas/src/scss/main.scss1653201776589052293 0
+66/home/kristine/Documents/Web Dev/repos/odin-eas/src/scss/main.scss1655609697739638064 0
 56/home/kristine/Documents/Web Dev/repos/odin-eas/src/scss1653200094895213222 1
-60/home/kristine/Documents/Web Dev/repos/odin-eas/src/index.js1653198916112298548 0
+60/home/kristine/Documents/Web Dev/repos/odin-eas/src/index.js1655609511181316537 0
 57/home/kristine/Documents/Web Dev/repos/odin-eas/.cache/5d1652869355336529171 1
 57/home/kristine/Documents/Web Dev/repos/odin-eas/.cache/601652869355336529171 1
 57/home/kristine/Documents/Web Dev/repos/odin-eas/.cache/501652869355336529171 1
@@ -127,11 +127,11 @@
 54/home/kristine/Documents/Web Dev/repos/odin-eas/.cache1652869355368528944 1
 57/home/kristine/Documents/Web Dev/repos/odin-eas/README.md1655031998455637760 0
 69/home/kristine/Documents/Web Dev/repos/odin-eas/dist/main.77bb5cfd.js1653204543984386900 0
-71/home/kristine/Documents/Web Dev/repos/odin-eas/dist/index.b10d73a7.css1653205042083812782 0
+71/home/kristine/Documents/Web Dev/repos/odin-eas/dist/index.b10d73a7.css1655609561779207683 0
 70/home/kristine/Documents/Web Dev/repos/odin-eas/dist/main.77bb5cfd.css1653204543932386851 0
 74/home/kristine/Documents/Web Dev/repos/odin-eas/dist/main.77bb5cfd.css.map1653204543992386908 0
-70/home/kristine/Documents/Web Dev/repos/odin-eas/dist/index.579125c3.js1653205042127813213 0
-52/home/kristine/Documents/Web Dev/repos/odin-eas/dist1653205042147813409 1
+70/home/kristine/Documents/Web Dev/repos/odin-eas/dist/index.579125c3.js1655609511253324787 0
+52/home/kristine/Documents/Web Dev/repos/odin-eas/dist1655609561783208155 1
 85/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/timsort/build/timsort.js1652869158650061602 0
 79/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/timsort/LICENSE.md1652869158494062942 0
 77/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/timsort/index.js1652869158446063354 0
@@ -5124,7 +5124,7 @@
 78/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/sshpk/lib/formats1652869159438054841 1
 75/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/lodash/lang.js1652869160066049455 0
 122/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/@parcel/optimizer-svgo/node_modules/@parcel/utils/src/blob.js1653204978987165595 0
-75/home/kristine/Documents/Web Dev/repos/odin-eas/dist/index.b10d73a7.css.map1653205042083812782 0
+75/home/kristine/Documents/Web Dev/repos/odin-eas/dist/index.b10d73a7.css.map1655609561783208155 0
 97/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/caniuse-lite/data/features/canvas.js1652869159730052336 0
 85/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/ajv/lib/dotjs/pattern.js1652869159654052988 0
 81/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/lodash/_castSlice.js1652869159758052097 0
@@ -6636,7 +6636,7 @@
 119/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/@parcel/cache/node_modules/@parcel/watcher/src/unix/fts.cc1653204974059112597 0
 106/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/@parcel/core/src/public/MutableBundleGraph.js1653204976867142840 0
 85/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/lodash/_createToPairs.js1652869159830051479 0
-74/home/kristine/Documents/Web Dev/repos/odin-eas/dist/index.579125c3.js.map1653205042127813213 0
+74/home/kristine/Documents/Web Dev/repos/odin-eas/dist/index.579125c3.js.map1655609511253324787 0
 128/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/@parcel/optimizer-htmlnano/node_modules/postcss-normalize-positions1653204973895110826 1
 152/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/@parcel/package-manager/node_modules/@parcel/workers/test/integration/workerfarm/console.js1653204979591172064 0
 92/home/kristine/Documents/Web Dev/repos/odin-eas/node_modules/cssstyle/lib/properties/clip.js1652869159442054807 0
